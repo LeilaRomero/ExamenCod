@@ -9,54 +9,60 @@ public class Numeros {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        int nD = 0;
-        int nd = 0;
-        nD = Integer.parseInt(args[0]);
-        if (nD <= 0) {
+    
+    public static boolean parametro = false;
+    
+    public static void main(String[] arg) {
+        int numeroDigitos = 0;
+        int numerosdigitos1 = 0;
+        numeroDigitos = Integer.parseInt(arg[0]);
+        if (numeroDigitos <= 0) {
             System.out.println("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): ");
         }
-        for (int i = 1; i <= 99999; i++) {
-            int div = i;
-            int c = 0;
+        for (int inicio = 1; inicio <= 99999; inicio++) {
+            int division = inicio;
+            int contador = 0;
 
-            while (div != 0) {
-                div = div / 10;
-                c++;
+            while (division != 0) {
+                division = division / 10;
+                contador++;
             }
-            nd = c;
+            numerosdigitos1 = contador;
 
-            if (nd == nD) {
-                if (i < 4) {
-                    p = true;
+            if (numerosdigitos1 == numeroDigitos) {
+                if (inicio < 4) {
+                    parametro = true;
                 } else {
-                    if (i % 2 == 0) {
-                        p = false;
+                    if (inicio % 2 == 0) {
+                        parametro = false;
                     } else {
-                        int c1 = 0;
-                        int i1 = 1;
-                        int l = (i - 1) / 2;
-                        if (l % 2 == 0) {
-                            l--;
+                        int contador1 = 0;
+                        int inicio1 = 1;
+                        
+                        //l=  lugar ya que no entiendo a que se refiere.
+                        
+                        int lugar = (inicio - 1) / 2;
+                        if (lugar % 2 == 0) {
+                            lugar--;
                         }
-                        while (i1 <= l) {
-                            if (i % i1 == 0) {
-                                c1++;
+                        while (inicio1 <= lugar) {
+                            if (inicio % inicio1 == 0) {
+                                contador1++;
                             }
-                            i1 += 2;
-                            if (c1 == 2) {
-                                i1 = l + 1;
+                            inicio1 += 2;
+                            if (contador1 == 2) {
+                                inicio1 = lugar + 1;
                             }
                         }
 
-                        if (c1 == 1) {
-                            p = true;
+                        if (contador1 == 1) {
+                            parametro = true;
                         }
                     }
                 }
 
-                if (p == true) {
-                    System.out.println(i);
+                if (parametro == true) {
+                    System.out.println(inicio);
                 }
             }
         }
