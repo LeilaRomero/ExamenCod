@@ -11,22 +11,24 @@ public class Factorial {
      */
     public static void main(String[] args) {
 
-        int j;
-        int f;
+        //j= numero ya que imagino que el programa es de numeracion.
+        
+        int numero;
+        int factorial;
 
-        j = 8;
+        numero = 8;
 
-        int i;
-        if (j == 0) {
-            f = 1;
+        int inicio;
+        if (numero == 0) {
+            factorial = 1;
         } else {
-            f = 1;
-            for (i = j; i >= 1; i--) {
-                f = f * i;
+            factorial = 1;
+            for (inicio = numero; inicio >= 1; inicio--) {
+                factorial = factorial * inicio;
             }
         }
 
-        System.out.println(f);
+        System.out.println(factorial);
 
     }
 
